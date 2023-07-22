@@ -1,47 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topilson Landy</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #007bff; /* Azul */
-            color: #fff; /* Texto branco */
+            background: linear-gradient(to right, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00, #ff0000);
+            background-size: 200% 200%;
+            animation: gradientAnimation 10s ease infinite;
         }
-        header {
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            padding: 20px;
         }
-        button {
-            background-color: #fff; /* Fundo branco para os botões */
-            color: #007bff; /* Texto azul para os botões */
-            font-size: 16px;
+
+        .input {
+            margin-bottom: 10px;
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button {
             padding: 10px 20px;
+            background-color: #f2f2f2;
             border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            margin: 5px;
         }
-        button:hover {
-            background-color: #ddd; /* Fundo cinza claro ao passar o mouse */
+
+        .button:hover {
+            background-color: #e6e6e6;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Topilson Landy</h1>
-    </header>
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="https://chat.openai.com/?model=text-davinci-002-render-sha" target="_blank">
-            <button>Topilson</button>
-        </a>
-        <a href="https://chat.openai.com/?model=text-davinci-002-render-sha" target="_blank">
-            <button> Chat</button>
-        </a>
+    <div class="container">
+        <input type="text" class="input" id="nameInput" placeholder="Nome">
+        <input type="number" class="input" id="numberInput" placeholder="Número">
+        <button class="button" onclick="openNewWindow()">Começar</button>
     </div>
+
+    <script>
+        function openNewWindow() {
+            var name = document.getElementById('nameInput').value;
+            var number = document.getElementById('numberInput').value;
+
+            if (name && number) {
+                var url = 'https://chat.openai.com/c/3b2e0078-fab5-479f-accd-3d5df1e2e62f';
+
+                var newWindow = window.open(url, '_blank');
+                newWindow.focus();
+            }
+        }
+    </script>
 </body>
-  </html>
-      
+</html>
