@@ -1,98 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Topilson Landy</title>
-  <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Estilos para o fundo com animação de cores */
-    body {
-      background: linear-gradient(to right, #ffcc00, #ff0000);
-      background-size: 200% 100%;
-      animation: gradientAnimation 10s linear infinite;
-    }
-
-    @keyframes gradientAnimation {
-      0% { background-position: 0 0; }
-      100% { background-position: 200% 0; }
-    }
-
-    /* Estilos para o título no topo da página */
-    h1 {
-      text-align: center;
-      padding: 20px;
-      margin: 0;
-      font-size: 48px;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Estilos para o botão de "começar" */
-    .start-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 16px 32px;
-      font-size: 24px;
-      color: white;
-      background-color: #00cc00;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .start-button:focus {
-      outline: none;
-    }
-
-    /* Estilos para a página de boas-vindas */
-    .welcome-page {
-      display: none;
-      background-color: white;
-      padding: 40px;
-      text-align: center;
-    }
-
-    .welcome-title {
-      font-size: 36px;
-      color: #00cc00;
-    }
-
-    .welcome-text {
-      font-size: 24px;
-      margin-top: 20px;
-    }
-  </style>
+    <title>Topilson Landy</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Título no topo da página -->
-  <h1>Topilson Landy</h1>
+    <header>
+        <h1>Topilson Landy</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Portfólio</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Botão "começar" -->
-  <button class="start-button" onclick="showWelcomePage()">Começar</button>
+    <section id="hero">
+        <h2>Bem-vindo ao meu site profissional!</h2>
+        <p>Este é um exemplo de site criado com HTML, CSS e JavaScript.</p>
+    </section>
 
-  <!-- Página de boas-vindas -->
-  <div class="welcome-page" id="welcomePage">
-    <h2 class="welcome-title">Landy</h2>
-    <p class="welcome-text">Sejam Bem Vindos ao Fenômeno</p>
-    <a href="https://whatsapp.com/dl/" target="_blank">
-      <button class="start-button">Acessar WhatsApp</button>
-    </a>
-    <!-- Espaço reservado para mais textos abaixo -->
-  </div>
+    <section id="about">
+        <h2>Sobre Mim</h2>
+        <p>Adicione aqui uma descrição sobre você e suas habilidades.</p>
+    </section>
 
-  <script>
-    function showWelcomePage() {
-      document.getElementById("welcomePage").style.display = "block";
-    }
-  </script>
+    <section id="portfolio">
+        <h2>Meu Portfólio</h2>
+        <p>Adicione seus projetos e trabalhos realizados aqui.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contato</h2>
+        <p>Entre em contato comigo através do formulário abaixo.</p>
+        <form id="contact-form">
+            <input type="text" placeholder="Seu nome">
+            <input type="email" placeholder="Seu e-mail">
+            <textarea placeholder="Sua mensagem"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
-
