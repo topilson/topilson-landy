@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Topilson Landy Runner</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Topilson Landy Runner</h1>
-    <canvas id="gameCanvas"></canvas>
-    <div id="buttons">
-        <button id="saveButton">Salvar</button>
-        <button id="breakButton">Quebrar</button>
-    </div>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00, #ff0000);
+            background-size: 600% 100%;
+            animation: gradientAnimation 10s ease infinite;
+        }
 
-    <script src="scripts.js"></script>
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .button {
+          color: black;
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>  
+    <div class="container">
+      <button class="button" onclick="window.location.href='https://on.soundcloud.com/ZxYDJ5SuL1FQ7DW8A'">Nicolau Bravo</button>
+    </div>
 </body>
 </html>
+
+
