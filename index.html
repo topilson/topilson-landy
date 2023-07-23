@@ -1,66 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Meu Website JavaScript</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        h1 {
-            margin-top: 50px;
-        }
-
-        #counter {
-            font-size: 36px;
-            margin: 30px 0;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 5px;
-            cursor: pointer;
-            background-color: #3498db;
-            border: none;
-            color: white;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-    </style>
+    <title>Meu Site PHP</title>
 </head>
 <body>
-    <h1>Meu Website JavaScript</h1>
-    <div id="counter">0</div>
-    <button id="incrementButton">Incrementar</button>
-    <button id="decrementButton">Decrementar</button>
-
-    <script>
-        let counterValue = 0;
-        const counterElement = document.getElementById('counter');
-        const incrementButton = document.getElementById('incrementButton');
-        const decrementButton = document.getElementById('decrementButton');
-
-        function updateCounter() {
-            counterElement.textContent = counterValue;
-        }
-
-        function increment() {
-            counterValue++;
-            updateCounter();
-        }
-
-        function decrement() {
-            counterValue--;
-            updateCounter();
-        }
-
-        incrementButton.addEventListener('click', increment);
-        decrementButton.addEventListener('click', decrement);
-    </script>
+    <h1>Bem-vindo ao Meu Site PHP</h1>
+    <p>Data atual: <?php echo date('d/m/Y'); ?></p>
+    <p>Nome do servidor: <?php echo $_SERVER['SERVER_NAME']; ?></p>
+    <p>Endereço IP do servidor: <?php echo $_SERVER['SERVER_ADDR']; ?></p>
+    <p>Software do servidor: <?php echo $_SERVER['SERVER_SOFTWARE']; ?></p>
 </body>
-    </html>
-    
+</html>
