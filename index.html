@@ -1,13 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Meu Site PHP</title>
+  <title>Meu Site</title>
+  <style>
+    /* Estilos CSS */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .background {
+      background-color: #3498db;
+      height: 100vh;
+    }
+
+    .buttons-container {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      font-size: 16px;
+      border: none;
+      background-color: #2ecc71;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:last-child {
+      background-color: #e74c3c;
+    }
+  </style>
 </head>
 <body>
-    <h1>Bem-vindo ao Meu Site PHP</h1>
-    <p>Data atual: <?php echo date('d/m/Y'); ?></p>
-    <p>Nome do servidor: <?php echo $_SERVER['SERVER_NAME']; ?></p>
-    <p>Endereço IP do servidor: <?php echo $_SERVER['SERVER_ADDR']; ?></p>
-    <p>Software do servidor: <?php echo $_SERVER['SERVER_SOFTWARE']; ?></p>
+  <?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $numero = $_POST["numero"];
+    $senha = $_POST["senha"];
+
+    if ($senha === "topilson 1") {
+      echo '<div class="background"></div>';
+      echo '<div class="buttons-container">';
+      echo '<button onclick="window.location.href=\'escrever_livro.php\'">Escrever Livro</button>';
+      echo '<button onclick="window.location.href=\'chat.php\'">Chat</button>';
+      echo '</div>';
+      exit();
+    } else {
+      echo "Palavra passe incorreta!";
+    }
+  } else {
+  ?>
+    <div class="container">
+      <h2>Cadastro</h2>
+      <form action="" method="POST">
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" name="numero" required>
+
+        <label for="senha">Palavra passe:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <input type="submit" value="Cadastrar">
+      </form>
+    </div>
+  <?php
+  }
+  ?>
 </body>
 </html>
+
