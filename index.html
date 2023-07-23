@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Meu Website JavaScript</title>
     <style>
         body {
-            background: linear-gradient(to right, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00, #ff0000);
-            background-size: 600% 100%;
-            animation: gradientAnimation 10s ease infinite;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
 
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
+        h1 {
+            margin-top: 50px;
         }
 
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        #counter {
+            font-size: 36px;
+            margin: 30px 0;
         }
 
-        .button {
-          color: black;
+        button {
             padding: 10px 20px;
-            background-color: white;
-            border: 2px solid black;
-            border-radius: 5px;
             font-size: 16px;
-            font-weight: bold;
+            margin: 5px;
             cursor: pointer;
+            background-color: #3498db;
+            border: none;
+            color: white;
         }
 
-        .button:hover {
-            background-color: #f2f2f2;
+        button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
-<body>  
-    <div class="container">
-      <button class="button" onclick="window.location.href='https://on.soundcloud.com/ZxYDJ5SuL1FQ7DW8A'">Ouvir EP de Nicolau Bravo</button>
-    </div>
+<body>
+    <h1>Meu Website JavaScript</h1>
+    <div id="counter">0</div>
+    <button id="incrementButton">Incrementar</button>
+    <button id="decrementButton">Decrementar</button>
+
+    <script>
+        let counterValue = 0;
+        const counterElement = document.getElementById('counter');
+        const incrementButton = document.getElementById('incrementButton');
+        const decrementButton = document.getElementById('decrementButton');
+
+        function updateCounter() {
+            counterElement.textContent = counterValue;
+        }
+
+        function increment() {
+            counterValue++;
+            updateCounter();
+        }
+
+        function decrement() {
+            counterValue--;
+            updateCounter();
+        }
+
+        incrementButton.addEventListener('click', increment);
+        decrementButton.addEventListener('click', decrement);
+    </script>
 </body>
-</html>
-
-
+    </html>
+    
