@@ -1,80 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Meu Site</title>
-  <style>
-    /* Estilos CSS */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .background {
-      background-color: #3498db;
-      height: 100vh;
-    }
-
-    .buttons-container {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin-right: 10px;
-      font-size: 16px;
-      border: none;
-      background-color: #2ecc71;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    button:last-child {
-      background-color: #e74c3c;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obter Endereço IP</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <?php
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $numero = $_POST["numero"];
-    $senha = $_POST["senha"];
-
-    if ($senha === "topilson 1") {
-      echo '<div class="background"></div>';
-      echo '<div class="buttons-container">';
-      echo '<button onclick="window.location.href=\'escrever_livro.php\'">Escrever Livro</button>';
-      echo '<button onclick="window.location.href=\'chat.php\'">Chat</button>';
-      echo '</div>';
-      exit();
-    } else {
-      echo "Palavra passe incorreta!";
-    }
-  } else {
-  ?>
-    <div class="container">
-      <h2>Cadastro</h2>
-      <form action="" method="POST">
-        <label for="numero">Número:</label>
-        <input type="text" id="numero" name="numero" required>
-
-        <label for="senha">Palavra passe:</label>
-        <input type="password" id="senha" name="senha" required>
-
-        <input type="submit" value="Cadastrar">
-      </form>
-    </div>
-  <?php
-  }
-  ?>
+  <div class="container">
+    <h1>Endereço IP do dispositivo:</h1>
+    <p id="ipAddress">Aguardando acesso...</p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
-
