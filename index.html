@@ -3,7 +3,25 @@
 <head>
   <title>Formulário de Cadastro e Login</title>
   <style>
-    /* ... (Estilos do CSS continuam aqui) ... */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -31,7 +49,26 @@
   </div>
 
   <script>
-    /* ... (Funções de cadastro e login continuam aqui) ... */
+    const cadastro = {
+      numero: "956907156",
+      senha: "12345top",
+      usuario: "usuario123"
+    };
+
+    function cadastrar() {
+      const numero = document.getElementById("numero").value;
+      const usuario = document.getElementById("usuario").value;
+      const senha = document.getElementById("senha").value;
+
+      if (numero === cadastro.numero && senha === cadastro.senha) {
+        alert("Usuário já cadastrado!");
+      } else {
+        cadastro.numero = numero;
+        cadastro.senha = senha;
+        cadastro.usuario = usuario;
+        alert("Cadastro realizado com sucesso!");
+      }
+    }
 
     function login() {
       const numeroLogin = document.getElementById("numeroLogin").value;
