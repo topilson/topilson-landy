@@ -3,25 +3,7 @@
 <head>
   <title>Formulário de Cadastro e Login</title>
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .container {
-      border: 1px solid #ccc;
-      padding: 20px;
-      margin: 10px;
-      width: 300px;
-      text-align: center;
-    }
-
-    button {
-      margin-top: 10px;
-    }
+    /* Estilos do CSS continuam aqui */
 
     .conteudo-apos-login {
       display: none;
@@ -65,27 +47,30 @@
   </div>
 
   <script>
-    const cadastro = {
-      numero: "956907156",
-      senha: "12345top",
-      usuario: "usuario123"
-    };
+    const cadastro = getUsuarioCadastrado();
 
     let noticias = [];
+
+    function getUsuarioCadastrado() {
+      const usuarioCadastrado = localStorage.getItem("cadastro");
+      return usuarioCadastrado ? JSON.parse(usuarioCadastrado) : {
+        numero: "956907156",
+        senha: "12345top",
+        usuario: "usuario123"
+      };
+    }
 
     function cadastrar() {
       const numero = document.getElementById("numero").value;
       const usuario = document.getElementById("usuario").value;
       const senha = document.getElementById("senha").value;
 
-      if (numero === cadastro.numero && senha === cadastro.senha) {
-        alert("Usuário já cadastrado!");
-      } else {
-        cadastro.numero = numero;
-        cadastro.senha = senha;
-        cadastro.usuario = usuario;
-        alert("Cadastro realizado com sucesso!");
-      }
+      cadastro.numero = numero;
+      cadastro.senha = senha;
+      cadastro.usuario = usuario;
+
+      localStorage.setItem("cadastro", JSON.stringify(cadastro));
+      alert("Cadastro realizado com sucesso!");
     }
 
     function login() {
@@ -94,8 +79,10 @@
 
       if (numeroLogin === cadastro.numero && senhaLogin === cadastro.senha) {
         document.getElementById("cadastroLoginContainer").style.display = "none";
+        document.getElementById("loginContainer").style.display = "none";
         document.getElementById("conteudoUsuario").style.display = "block";
         document.getElementById("nomeUsuario").innerText = cadastro.usuario;
+        exibirNoticias();
       } else {
         alert("Número ou senha incorretos. Tente novamente!");
       }
@@ -142,6 +129,7 @@
       noticias = [];
       document.getElementById("noticias").innerHTML = "<h2>Notícias</h2>";
       document.getElementById("cadastroLoginContainer").style.display = "block";
+      document.getElementById("loginContainer").style.display = "block";
       document.getElementById("conteudoUsuario").style.display = "none";
       alert("Logout realizado com sucesso!");
     }
