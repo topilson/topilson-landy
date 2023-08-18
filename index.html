@@ -1,138 +1,22 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-  <title>Formulário de Cadastro e Login</title>
+   <title>Hello, World!</title>
   <style>
-    /* Estilos do CSS continuam aqui */
-
-    .conteudo-apos-login {
-      display: none;
-      background-color: black;
-      color: white;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    .postagem {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-top: 10px;
-    }
+   h1
+  {color: white;}
   </style>
 </head>
 <body>
-  <div class="container" id="cadastroLoginContainer">
-    <h1>Cadastro</h1>
-    <input type="text" id="numero" placeholder="Número">
-    <input type="text" id="usuario" placeholder="Nome de Usuário">
-    <input type="password" id="senha" placeholder="Senha">
-    <button onclick="cadastrar()">Cadastrar</button>
-  </div>
-
-  <div class="container" id="loginContainer">
-    <h1>Login</h1>
-    <input type="text" id="numeroLogin" placeholder="Número">
-    <input type="password" id="senhaLogin" placeholder="Senha">
-    <button onclick="login()">Login</button>
-  </div>
-
-  <div class="conteudo-apos-login" id="conteudoUsuario">
-    <h2>Bem-vindo, <span id="nomeUsuario"></span>!</h2>
-    <textarea id="postagem" placeholder="Digite sua postagem aqui"></textarea>
-    <button onclick="publicarPostagem()">Publicar</button>
-    <div id="noticias">
-      <h2>Notícias</h2>
-    </div>
-    <button onclick="logout()">Logout</button>
-  </div>
-
-  <script>
-    const cadastro = getUsuarioCadastrado();
-
-    let noticias = [];
-
-    function getUsuarioCadastrado() {
-      const usuarioCadastrado = localStorage.getItem("cadastro");
-      return usuarioCadastrado ? JSON.parse(usuarioCadastrado) : {
-        numero: "956907156",
-        senha: "12345top",
-        usuario: "usuario123"
-      };
-    }
-
-    function cadastrar() {
-      const numero = document.getElementById("numero").value;
-      const usuario = document.getElementById("usuario").value;
-      const senha = document.getElementById("senha").value;
-
-      cadastro.numero = numero;
-      cadastro.senha = senha;
-      cadastro.usuario = usuario;
-
-      localStorage.setItem("cadastro", JSON.stringify(cadastro));
-      alert("Cadastro realizado com sucesso!");
-    }
-
-    function login() {
-      const numeroLogin = document.getElementById("numeroLogin").value;
-      const senhaLogin = document.getElementById("senhaLogin").value;
-
-      if (numeroLogin === cadastro.numero && senhaLogin === cadastro.senha) {
-        document.getElementById("cadastroLoginContainer").style.display = "none";
-        document.getElementById("loginContainer").style.display = "none";
-        document.getElementById("conteudoUsuario").style.display = "block";
-        document.getElementById("nomeUsuario").innerText = cadastro.usuario;
-        exibirNoticias();
-      } else {
-        alert("Número ou senha incorretos. Tente novamente!");
-      }
-    }
-
-    function publicarPostagem() {
-      const postagem = document.getElementById("postagem").value;
-
-      if (postagem.trim() !== "") {
-        noticias.push({
-          usuario: cadastro.usuario,
-          postagem: postagem
-        });
-
-        exibirNoticias();
-        document.getElementById("postagem").value = "";
-      }
-    }
-
-    function exibirNoticias() {
-      const noticiasContainer = document.getElementById("noticias");
-      noticiasContainer.innerHTML = "<h2>Notícias</h2>";
-
-      noticias.forEach((item) => {
-        const divPostagem = document.createElement("div");
-        divPostagem.classList.add("postagem");
-
-        const autor = document.createElement("strong");
-        autor.innerText = item.usuario + " disse:";
-        divPostagem.appendChild(autor);
-
-        const textoPostagem = document.createElement("p");
-        textoPostagem.innerText = item.postagem;
-        divPostagem.appendChild(textoPostagem);
-
-        noticiasContainer.appendChild(divPostagem);
-      });
-    }
-
-    function logout() {
-      document.getElementById("numeroLogin").value = "";
-      document.getElementById("senhaLogin").value = "";
-      document.getElementById("postagem").value = "";
-      noticias = [];
-      document.getElementById("noticias").innerHTML = "<h2>Notícias</h2>";
-      document.getElementById("cadastroLoginContainer").style.display = "block";
-      document.getElementById("loginContainer").style.display = "block";
-      document.getElementById("conteudoUsuario").style.display = "none";
-      alert("Logout realizado com sucesso!");
-    }
-  </script>
+  <center><h1>Topilson</h1></center>
+  <center><img src="IMAGENS/BÍBLIA.jpg" /></center>
+  <button> <a href="google.com">Pesquisar</a></button>
 </body>
+    
+<script>
+        document.body.style.background='black;
+</script>
+
+
 </html>
